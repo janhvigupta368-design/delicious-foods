@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Pure emoji burgers-fries-pizza background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8f0;
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text x="50%" y="50%" font-size="32" text-anchor="middle" dominant-baseline="central">🍔</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text x="50%" y="50%" font-size="32" text-anchor="middle" dominant-baseline="central">🍟</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><text x="50%" y="50%" font-size="32" text-anchor="middle" dominant-baseline="central">🍕</text></svg>');
+    background-size: 120px 120px, 120px 120px, 120px 120px;
+    background-position: 0 0, 60px 60px, 30px 90px;
+    background-repeat: repeat;
+    color: #444;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+/* Modal Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(40, 28, 26, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Window */
+.modal {
+    background: #fff1f0;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(239, 90, 76, 0.4);
+    width: 420px;
+    max-width: 90%;
+    padding: 40px 35px;
+    text-align: center;
+    font-weight: 600;
+    color: #d94b3a;
+    font-size: 1.35rem;
+    letter-spacing: 1.1px;
+}
+
+.modal h2 {
+    margin-bottom: 28px;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.modal-buttons button {
+    background: #ef5a4c;
+    border: none;
+    color: #fff;
+    font-size: 1.12rem;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 30px;
+    box-shadow: 0 9px 25px rgba(239, 90, 76, 0.5);
+    margin: 10px 15px;
+    cursor: pointer;
+    min-width: 100px;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.modal-buttons button:hover {
+    background: #d94b42;
+    box-shadow: 0 12px 30px rgba(217, 75, 66, 0.75);
+}
+
+header {
+    position: relative;
+    background-color: #ef5a4c;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    box-shadow: 0 4px 12px rgba(239, 90, 76, 0.45);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+    z-index: 5;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    font-size: 24px;
+    background: #c94f45;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    outline: none;
+}
+.dark-toggle:hover {
+    background: #a03b33;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ffeee7;
+}
+
+.menu, .cart {
+    width: 95%;
+    max-width: 720px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 28px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu h2, .cart h2 {
+    color: #ef5a4c;
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-left: 5px solid #ef5a4c;
+    padding-left: 12px;
+}
+
+.view-toggles {
+    text-align: right;
+    margin-bottom: 24px;
+}
+.view-toggles button {
+    padding: 9px 20px;
+    margin-left: 10px;
+    background: #ef5a4c;
+    color: #fff;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(239, 90, 76, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.view-toggles button:hover {
+    background: #d94b42;
+    box-shadow: 0 7px 20px rgba(217, 75, 66, 0.4);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 18px 0;
+    border-bottom: 1.8px solid #f3f0ec;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+}
+.menu-item:last-child {
+    border-bottom: none;
+}
+.menu-item:hover {
+    background-color: #fff4f2;
+    box-shadow: 0 8px 12px rgba(239, 90, 76, 0.15);
+}
+.menu-item img {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-right: 20px;
+    border: 2px solid #f4c5ba;
+    box-shadow: 0 3px 8px rgba(239, 90, 76, 0.3);
+    transition: transform 0.3s ease;
+}
+.menu-item img:hover {
+    transform: scale(1.05);
+}
+.menu-info {
+    flex: 1;
+    font-weight: 500;
+    color: #5c3d2e;
+}
+.menu-info strong {
+    font-size: 1.125rem;
+}
+.menu-item .stars {
+    color: #ffb400;
+    margin: 6px 0 0 0;
+    font-size: 1.03rem;
+    letter-spacing: 0.15pc;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.13);
+}
+.menu-item button {
+    background-color: #ef5a4c;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 20px;
+    box-shadow: 0 5px 15px rgba(239, 90, 76, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-item button:hover {
+    background-color: #d94b42;
+    box-shadow: 0 7px 20px rgba(217, 75, 66, 0.5);
+}
+.cart {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+#cart-items div {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #f9dad0;
+    box-shadow: 0 5px 10px rgba(239, 90, 76, 0.18);
+    color: #7b4a3a;
+    transition: background 0.3s;
+}
+#cart-items div:hover {
+    background: #fbc8b1;
+    box-shadow: 0 7px 18px rgba(217, 75, 66, 0.25);
+}
+#checkout-btn {
+    margin-top: 16px;
+    background: #a73e30;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px 36px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 9px 25px rgba(167, 62, 48, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+#checkout-btn:hover {
+    background: #802b24;
+    box-shadow: 0 12px 30px rgba(128, 43, 36, 0.6);
+}
+footer {
+    background: #f8f2ee;
+    color: #9c8179;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1pc;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #121212;
+    color: #d5cdc0;
+}
+body.dark-mode header {
+    background: #5c211d;
+    box-shadow: 0 4px 12px rgba(92, 33, 29, 0.8);
+}
+body.dark-mode .dark-toggle {
+    background: #a54441;
+    color: #fff5f2;
+}
+body.dark-mode .dark-toggle:hover {
+    background: #7c3230;
+}
+body.dark-mode nav ul li a {
+    color: #d5cdc0;
+}
+body.dark-mode .menu, body.dark-mode .cart {
+    background: #2c1f1d;
+    color: #e4d7ce;
+    box-shadow: 0 11px 30px rgba(92, 33, 29, 0.85);
+}
+body.dark-mode .menu-item {
+    border-color: #4c2e2b;
+}
+body.dark-mode .menu-item button,
+body.dark-mode #checkout-btn {
+    background: #7a2c27;
+    box-shadow: 0 9px 25px rgba(122, 44, 39, 0.75);
+}
+body.dark-mode .menu-item button:hover,
+body.dark-mode #checkout-btn:hover {
+    background: #aa4b47;
+    box-shadow: 0 12px 30px rgba(170, 75, 71, 0.9);
+}
+body.dark-mode footer {
+    background: #1a1412;
+    color: #b49e97;
+}
+
+/* Large and Small icon views */
+.menu-large .menu-item img {
+    width: 140px;
+    height: 100px;
+}
+.menu-small .menu-item img {
+    width: 52px;
+    height: 40px;
+}
+.menu-large .menu-item {
+    font-size: 1.15rem;
+    padding: 22px 0;
+}
+.menu-small .menu-item {
+    font-size: 0.95rem;
+    padding: 10px 0;
+}

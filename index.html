@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Food Ordering Website</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <h2>Welcome! Please choose your option</h2>
+            <div class="modal-buttons">
+                <button id="btn-signin">Sign In</button>
+                <button id="btn-login">Login</button>
+                <button id="btn-skip">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Delicious Food Order</h1>
+        <button id="dark-mode-toggle" class="dark-toggle">🌙</button>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="menu">
+        <h2>Menu</h2>
+        <div class="view-toggles">
+            <button id="large-view-btn">Large Icons</button>
+            <button id="small-view-btn">Small Icons</button>
+        </div>
+        <div id="menu-items"></div>
+    </section>
+    <section class="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total Price: ₹0.00</p>
+        <button id="checkout-btn">Checkout</button>
+    </section>
+    <footer>
+        <p>© 2025 Delicious Food Order. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
